@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(237, 213, 157);">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" (click)="clientList()">Client List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="clientadd()">Add Client</a>
+        </li>
+        
+    </ul>
+  </nav>
+<div class="container">
+    <h2 style="text-align: center;">
+        
+            Client List
+        
+    </h2>
+
+    <table class="table table-striped table-hovered table-sm">
+        <thead>
+            <tr>
+                <th>Client Id</th>
+                <th>Client Name</th>
+                <th>Address</th>
+                <th>Contact No.</th>
+                <th>Gender</th>
+                <th>Hotel Id</th>
+                <th>Checking Date</th>
+                <th>Checkout Date</th>
+                <th>Accommodation</th>
+                <th>payStatus</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of clients">
+                <td>{{client.clientNumber}}</td>
+                <td>{{client.clientName}}</td>
+                <td>{{client.clientAddress}}</td>
+                <td>{{client.contactNo}}</td>
+                <td>{{client.gender}}</td>
+                <td>{{client.hotelId}}</td>
+                <td>{{client.checkinDate}}</td>
+                <td>{{client.checkoutDate}}</td>
+                <td>{{client.accommodationId}}</td>
+                <td>{{client.payStatus}}</td>
+                <td><button class="btn btn-sm" style="background-color: rgb(141, 152, 222);" (click)="showDetails(client.clientNumber)">Details</button>
+                    <button class="btn  btn-sm" style="background-color: burlywood;" (click)="UpdateClient(client.clientNumber)">Update</button>
+                    <button class="btn btn-danger btn-sm" (click)="DeleteClient(client.clientNumber)">Delete</button>
+                    <button class="btn  btn-sm" style="background-color: rgb(182, 226, 105); color: black;" (click)="showServices(client.clientNumber)">Services</button>  
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

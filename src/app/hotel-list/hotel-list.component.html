@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(237, 213, 157);">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" (click)="hotelList()">Hotel List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="addHotel()">Add Hotel</a>
+      </li>
+        
+    </ul>
+  </nav>
+
+
+<div class="container">
+    <h2 style="text-align: center;">Hotel List</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Hotel Id</th>
+                <th>Hotel Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hotel of hotels">
+                <td>{{hotel.hotelId}}</td>
+                <td>{{hotel.hotelName}}</td>
+                <td>
+                    <button (click)="showDetails(hotel.hotelId)" class="btn" style="background-color: rgb(140, 148, 244);">details</button>&nbsp;
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+

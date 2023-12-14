@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(237, 213, 157);">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" (click)="clientList()">Client List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="clientadd()">Add Client</a>
+        </li>
+    </ul>
+  </nav>
+
+
+  <div class="container">
+    <h2 >Client Details</h2>
+    <table>
+        <tr>
+            <td>Client Number:</td>
+            <td>&nbsp;{{client.clientNumber}}</td>
+        </tr>
+        <tr>
+            <td>Client Name:</td>
+            <td>&nbsp;{{client.clientName}}</td>
+        </tr>
+
+        <tr>
+            <td>Address:</td>
+            <td>&nbsp;{{client.clientAddress}}</td>
+        </tr>
+
+        <tr>
+            <td>Contact No:</td>
+            <td>&nbsp;{{client.contactNo}}</td>
+        </tr>
+
+        <tr>
+            <td>Gender:</td>
+            <td>&nbsp;{{client.gender}}</td>
+        </tr>
+
+        <tr>
+            <td>hotelId:</td>
+            <td>&nbsp;{{client.hotelId}}</td>
+        </tr>
+
+        <tr>
+            <td>Checkin Date:</td>
+            <td>&nbsp;{{client.checkinDate}}</td>
+        </tr>
+
+        <tr>
+            <td>Checkout Date:</td>
+            <td>&nbsp;{{client.checkoutDate}}</td>
+        </tr>
+
+        <tr>
+            <td>Accommodation:</td>
+            <td>&nbsp;{{client.accommodationId}}</td>
+        </tr>
+
+        <tr>
+            <td>payStatus:</td>
+            <td>&nbsp;{{client.payStatus}}</td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <button (click)="clientList()" class="btn" style="background-color: rgb(182, 226, 105);"> Go Back to the Client List</button>
+        </tr>
+
+        
+
+    </table>
+  </div>

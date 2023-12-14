@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(237, 213, 157);">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" (click)="addService()">Add Services </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="listServices()">Services list </a>
+      </li>
+     
+        
+         
+    </ul>
+  </nav>
+  
+  <div class="container">
+    <h2 style="text-align: center;">Service List</h2>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>serviceId</th>
+          <th>serviceName</th>
+          <th>price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let service of services">
+          <td>{{service.serviceId}}</td>
+          <td>{{service.serviceName}}</td>
+          <td>{{service.price | number:'.2'}}/-</td>
+          <td>
+            <button class="btn" style="background-color: rgb(141, 152, 222);" (click)="details(service.serviceId)">details</button> &nbsp;
+            <button class="btn" style="background-color: burlywood;" (click)="update(service.serviceId)">Update</button> &nbsp;
+            <button class="btn btn-danger" (click)="delete(service.serviceId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

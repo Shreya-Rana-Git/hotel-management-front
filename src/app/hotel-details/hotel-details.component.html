@@ -1,0 +1,26 @@
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(237, 213, 157);">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" (click)="hotelList()">Hotel List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="addHotel()">Add Hotel</a>
+      </li>
+        
+    </ul>
+  </nav>
+  
+<div class="container">
+    <h2>View Hotel Details</h2>
+    <div>
+        <label>Hotel Id : </label> {{hotel.hotelId}}
+    </div>
+    <div>
+        <label>Hotel Name : </label> {{hotel.hotelName}}
+    </div>
+    <div>
+        <button (click)="goToHotelList()" class="btn" style="background-color: rgb(182, 226, 105);">Go Back To Hotel List</button>
+    </div>
+    
+</div>

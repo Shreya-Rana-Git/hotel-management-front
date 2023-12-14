@@ -1,0 +1,23 @@
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(237, 213, 157);">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" (click)="addService()">Add Services </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="listServices()">Services list </a>
+      </li>    
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>Service Details</h2>
+    Service Id:&nbsp;&nbsp;{{service.serviceId}}
+    <br>
+    Service Name:&nbsp;&nbsp;{{service.serviceName}}
+    <br>
+    Price:&nbsp;&nbsp;{{ service.price | currency:'INR'}} /-
+    <br><br>
+    <button (click)="listServices()" class="btn" style="background-color: rgb(182, 226, 105);">return to Service List</button>
+  </div>
+  

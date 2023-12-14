@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgb(237, 213, 157);">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" (click)="clientList()">Client List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="clientadd()">Add Client</a>
+        </li>
+        
+    </ul>
+  </nav>
+<form>
+    <button (click)="addService(id)" class="btn" style="background-color: rgb(182, 226, 105);">Add Client Service</button>&nbsp;
+    <button (click)="deleteAll(id)" class="btn btn-danger">Delete All</button>
+    <button (click)="createBill(id)" class="btn" style="background-color: rgb(182, 226, 105); float: right; color: black;">Create Bill & Pay</button>
+</form>
+  <div class="container">
+    <h3 style="text-align: center;">Client Services</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Sl No.</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let service of services; let i=index;">
+                <td>{{i+1}}</td>
+                <td>{{service.serviceType}}</td>
+                <td>{{service.date}}</td>
+                <td>{{service.amount |currency:'INR'}}/-</td>
+                <td>
+                    <button (click)="deleteSingle(service.serialNumber)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>

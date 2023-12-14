@@ -1,0 +1,46 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(237, 213, 157);">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" (click)="accoList()">Accommodation List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="addAcco()">Add Accommodation</a>
+      </li>
+        
+    </ul>
+  </nav>
+
+
+  <div class="container">
+    
+    <div class ="col-md-6 offset-md-3">
+        <h1 style="text-align: center;">Add Accommodation</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Accommodation Id</label>
+            <input class="form-control" id="accommodationId" type="text"
+             [(ngModel)]="acco.accommodationId" name="accommodationId" ><br/>
+             <!--[(ngModel)] = two way binding -->
+        </div>
+    
+        <div class="form-group">
+            <label>Accommodation Type</label>
+            <input class="form-control" id="accommodationType" type="text"
+             [(ngModel)]="acco.accommodationType" name="accommodationType" ><br/>
+             <!--[(ngModel)] = two way binding -->
+        </div>
+    
+        <div class="form-group">
+            <label>Fare per day</label>
+            <input class="form-control" id="farePerDay" type="text"
+             [(ngModel)]="acco.farePerDay" name="farePerDay"><br/>
+             <!--[(ngModel)] = two way binding -->
+        </div>
+    
+        <button class="btn" style="background-color: rgb(182, 226, 105);" type="submit">Submit</button>
+    </form>
+    </div>
+    
+    </div>

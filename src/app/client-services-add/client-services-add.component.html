@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(237, 213, 157);">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" (click)="clientList()">Client List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="clientadd()">Add Client</a>
+        </li>
+    </ul>
+  </nav>
+  <div class ="col-md-6 offset-md-3">
+    <h2 style="text-align: center;">Add Client Service</h2>
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Serial Id</label>
+        <input class="form-control" id="serialNumber" type="text"
+         [(ngModel)]="clientService.serialNumber" name="serialNumber" value="{{id}}" readonly><br/>
+         <!--[(ngModel)] = two way binding -->
+    </div>
+    <div class="form-group">
+        <label>Client Number</label>
+        <input class="form-control" id="clientNumber" type="text"
+         [(ngModel)]="clientService.clientNumber" name="clientNumber"  readonly><br/>
+         <!--[(ngModel)] = two way binding -->
+    </div>
+    <div class="form-group">
+        <label>serviceType</label>
+         <select class="form-select" id="serviceType" [(ngModel)]="clientService.serviceType" name="serviceType">
+            <option *ngFor="let service of services" value="{{service.serviceName}}">"{{service.serviceName}}"</option>
+         </select>
+         <!--[(ngModel)] = two way binding -->
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input class="form-control" id="date" type="date"
+         [(ngModel)]="clientService.date" name="date"><br/>
+         <!--[(ngModel)] = two way binding -->
+    </div>
+
+    
+
+    
+
+    <button class="btn" style="background-color: rgb(182, 226, 105);" type="submit">Submit</button>
+</form>
+</div>

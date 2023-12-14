@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgb(237, 213, 157);">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" (click)="accoList()">Accommodation List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="addAcco()">Add Accommodation</a>
+      </li>
+        
+    </ul>
+  </nav>
+
+
+  <div class="container">
+    <h2 style="text-align: center;">Accommodation List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+        <th>Id</th>
+        <th>Type</th>
+        <th>Fare per day</th>
+        <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let acc of accommodations">
+          <td>{{acc.accommodationId}}</td>
+          <td>{{acc.accommodationType}}</td>
+          <td>{{acc.farePerDay | currency:'INR'}}/-</td>
+          <td><button (click)="showDetails(acc.accommodationId)" class="btn" style="background-color: rgb(141, 152, 222);">Details</button>&nbsp;
+            <button (click)="updateDetails(acc.accommodationId)" class="btn" style="background-color: burlywood;">Update</button>&nbsp;
+            <button (click)="DeleteAcco(acc.accommodationId)" class="btn btn-danger" >Delete</button>&nbsp;
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
